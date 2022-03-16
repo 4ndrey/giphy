@@ -57,7 +57,7 @@ extension ListViewController: ListPresenterOutput {
 
 extension ListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.characters.count == 0 {
+        if searchText.count == 0 {
             presenter.showTrending()
         }
         else {

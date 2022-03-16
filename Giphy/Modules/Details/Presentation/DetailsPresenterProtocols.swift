@@ -10,7 +10,7 @@ protocol DetailsPresenterInput {
     func getGifDetails(model: GifModel)
 }
 
-protocol DetailsPresenterOutput: class {
+protocol DetailsPresenterOutput: AnyObject {
     func showGifDetails(model: GifDetailsModel)
     func showError(message: String)
 }

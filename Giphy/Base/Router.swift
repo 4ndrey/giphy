@@ -9,5 +9,5 @@
 import UIKit
 
 protocol Router {
-    weak var viewController: UIViewController? { get set }
+    var viewController: UIViewController? { get set }
 }

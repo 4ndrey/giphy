@@ -12,7 +12,7 @@ protocol ListPresenterInput {
     func loadMore(query: String?)
 }
 
-protocol ListPresenterOutput: class {
+protocol ListPresenterOutput: AnyObject {
     func updateCollection(collection: [GifModel], page: Int)
     func showError(message: String)
 }

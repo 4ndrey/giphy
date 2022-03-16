@@ -21,7 +21,7 @@ class GifsNetworkRepository: GifsRepository {
     override func getAll(query: Query) throws -> [Gif] {
         guard let query = query as? RequestParams else { throw "Bad query" }
         let data: NSDictionary
-        if query.q == nil || query.q!.characters.count == 0 { data = try Networking.getGifs(limit: query.limit, offset: query.offset) }
+        if query.q == nil || query.q!.count == 0 { data = try Networking.getGifs(limit: query.limit, offset: query.offset) }
         else { data = try Networking.searchGifs(query: query.q, limit: query.limit, offset: query.offset) }
         let result = try parser.parse(data)
         return result

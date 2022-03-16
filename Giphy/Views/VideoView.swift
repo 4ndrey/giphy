@@ -20,14 +20,14 @@ class VideoView: UIView {
 
         player = AVPlayer(url: videoURL)
         playerLayer = AVPlayerLayer(player: player)
-        playerLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        playerLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         playerLayer?.frame = bounds
         layer.addSublayer(playerLayer!)
         player?.play()
 
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem, queue: nil, using: { _ in
             DispatchQueue.main.async {
-                self.player?.seek(to: kCMTimeZero)
+                self.player?.seek(to: CMTime.zero)
                 self.player?.play()
             }
         })
