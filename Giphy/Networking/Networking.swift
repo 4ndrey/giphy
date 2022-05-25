@@ -11,7 +11,7 @@ import Foundation
 class Networking {
 
     private static let baseUrl = "http://api.giphy.com"
-    private static let apiKey = "dc6zaTOxFJmzC"
+    private static let apiKey = "5E6G5smouu6eGLLAns8fu1ZI1mQSInoN"
 
     private class func urlComponents() throws -> URLComponents {
         guard let baseURL = URL(string: baseUrl) else { throw "Bad base url" }
